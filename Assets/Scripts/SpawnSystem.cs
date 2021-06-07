@@ -84,10 +84,10 @@ public class SpawnSystem : MonoBehaviour
                 if (randomEnemies.enemies[i].chances >= Random.Range(0f, 1f))
                 {
                     yield return new WaitForSeconds(randomTime);
-                    GameObject spawnThis = Instantiate(singleEnemy, transform.position, Quaternion.identity); ;
+                    GameObject spawnThis = Instantiate(singleEnemy, transform.position, Quaternion.identity);
                     spawnThis.name = randomEnemies.enemies[i].prefabName;
                     spawnThis.AddComponent<Rigidbody>();
-                    spawnThis.GetComponent<Renderer>().sharedMaterial.color = randomEnemies.enemies[i].randomColor;
+                    spawnThis.GetComponent<Renderer>().material.color = randomEnemies.enemies[i].randomColor;
 
                 }
                 else Debug.Log("Chances to spawn too low");
